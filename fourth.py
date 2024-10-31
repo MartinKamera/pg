@@ -7,7 +7,7 @@ def je_tah_mozny(figurka, cilova_pozice, obsazene_pozice):
     sloupec_krok = (cilova_pozice[1] - pocatecni_pozice[1]) // max(abs(cilova_pozice[1] - pocatecni_pozice[1]), 1)
     
     if typ_figurky == "pěšec":
-        # Pěšec se může pohybovat pouze o jedno pole dopředu, nebo o jedno pole diagonálně, pokud bere figurku
+       
         if vektor == (1, 0) and cilova_pozice not in obsazene_pozice:
             je_mozny = True
         elif vektor in [(1, 1), (1, -1)] and cilova_pozice in obsazene_pozice:
