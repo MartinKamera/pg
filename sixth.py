@@ -12,7 +12,6 @@ def download_url_and_get_all_hrefs(url):
     hrefs = []
 
     i = 0
-    a = 0
     
     while i+5 <= len(req_unicode):
         if (req_unicode[i:i+5] == "href="):
