@@ -1,8 +1,5 @@
 from abc import ABC, abstractmethod
 
-def SeradSouradnice(souradnice):
-    row, col = souradnice
-    rows = []
 
 
 
