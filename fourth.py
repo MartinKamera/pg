@@ -7,41 +7,26 @@ def je_tah_mozny(figurka, cilova_pozice, obsazene_pozice):
     sloupec_krok = (cilova_pozice[1] - pocatecni_pozice[1]) // max(abs(cilova_pozice[1] - pocatecni_pozice[1]), 1)
     
     if typ_figurky == "pěšec":
-       
-        if vektor == (1, 0) and cilova_pozice not in obsazene_pozice:
-            je_mozny = True
-        elif vektor in [(1, 1), (1, -1)] and cilova_pozice in obsazene_pozice:
-            je_mozny = True
-        else:
-            je_mozny = False
-
-    elif typ_figurky == "střelec":
+        je_mozny = vektor == (1, 0)
+    elif typ_figurky == "střelec" or typ_figurky == "dáma":
         je_mozny = abs(vektor[0]) == abs(vektor[1])
-
-    elif typ_figurky == "věž":
+    elif typ_figurky == "věž" or typ_figurky == "dáma":
         je_mozny = vektor[0] == 0 or vektor[1] == 0
-
-    elif typ_figurky == "dáma":
-        je_mozny = abs(vektor[0]) == abs(vektor[1]) or vektor[0] == 0 or vektor[1] == 0
-
     elif typ_figurky == "král":
         je_mozny = max(abs(vektor[0]), abs(vektor[1])) == 1
-
     elif typ_figurky == "jezdec":
         je_mozny = vektor in [(2, 1), (2, -1), (-2, 1), (-2, -1), (1, 2), (1, -2), (-1, 2), (-1, -2)] and cilova_pozice not in obsazene_pozice
     else:
         je_mozny = False
-
-    
     if je_mozny and typ_figurky != "jezdec":
         aktualni_pozice = (pocatecni_pozice[0] + radek_krok, pocatecni_pozice[1] + sloupec_krok)
+        
         while aktualni_pozice!=cilova_pozice :
             
             if (aktualni_pozice in obsazene_pozice or cilova_pozice in obsazene_pozice):
                 je_mozny = False
                 break
-            
-            
+
             aktualni_pozice = (aktualni_pozice[0] + radek_krok, aktualni_pozice[1] + sloupec_krok)
 
     return je_mozny
