@@ -27,7 +27,7 @@ def convert_to_czk(amount, currency):
             casti = line.split("|")
             mnozstvi = float(casti[2].strip()) 
             code = (casti[3].strip())
-            kurz = int(casti[4].strip())
+            kurz = (casti[4].strip())
             kurz1 = kurz.replace(",",".")
             kurz_conv = float(kurz1) 
             if code == currency:
@@ -61,4 +61,3 @@ Velká Británie|libra|1|GBP|29,745
             convert_to_czk(100, "XYZ")
         except ValueError as e:
             assert str(e) == "Currency XYZ not found in the exchange rate list."
-print(convert_to_czk(2, "GPB"))
