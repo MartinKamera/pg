@@ -9,7 +9,6 @@
 # Pokud zadaná měna v kurzovním lístku neexistuje, vyhoďte výjimku `ValueError`.
 
 import requests
-
 def convert_to_czk(amount, currency):
     # Stáhneme aktuální kurzovní lístek
     url = "http://www.cnb.cz/cs/financni_trhy/devizovy_trh/kurzy_devizoveho_trhu/denni_kurz.txt"
