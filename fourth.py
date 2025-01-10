@@ -20,9 +20,7 @@ def je_tah_mozny(figurka, cilova_pozice, obsazene_pozice):
         je_mozny = False
     if je_mozny and typ_figurky != "jezdec":
         aktualni_pozice = (pocatecni_pozice[0] + radek_krok, pocatecni_pozice[1] + sloupec_krok)
-        
         while aktualni_pozice!=cilova_pozice :
-            
             if (aktualni_pozice in obsazene_pozice or cilova_pozice in obsazene_pozice):
                 je_mozny = False
                 break
